@@ -1,5 +1,7 @@
 # JulieOps Validation Extensions
 
+[![CI tests](https://github.com/kafka-ops/julieops-validations-extension/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/kafka-ops/julieops-validations-extension/actions/workflows/unit-tests.yml)
+
 This repo contains custom validation extensions to the original set available 
 in the project [JulieOps](https://github.com/kafka-ops/julie).
 
