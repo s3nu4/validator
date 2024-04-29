@@ -57,10 +57,7 @@ public class ConsumerGroupValidation implements TopologyValidation {
     }
 
     private static void checkGroup(Consumer consumer) throws ValidationException {
-        if (!consumer.getPrincipal().isBlank() && consumer.getGroup().isEmpty()) {
-            throw new ValidationException(String.format("Group id for consumer %s is not set or is set to *", consumer.getPrincipal()));
-        }
-        if (consumer.getGroup().isPresent() && consumer.getGroup().get().equals(TOPOLOGY_CONSUMER_FORBIDDEN_GROUP_FIELD)) {
+        if (!consumer.getPrincipal().isBlank() && consumer.getGroup().isEmpty() || consumer.getGroup().isPresent() && consumer.getGroup().get().equals(TOPOLOGY_CONSUMER_FORBIDDEN_GROUP_FIELD)) {
             throw new ValidationException(String.format("Group id for consumer %s is not set or is set to *", consumer.getPrincipal()));
         }
     }
